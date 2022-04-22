@@ -5,11 +5,16 @@ function newImage(url, left, bottom){
     object.style.left = left + 'px'
     object.style.bottom = bottom + 'px'
     document.body.append(object)
-    return object
+    return object 
 }
 
 function newItem(url, left, bottom){
     let item = newImage(url, left, bottom)
+    item.addEventListener('dblclick' , function(){
+        item.remove()
+        newInventory()
+    })
+    
 }
 
 function newInventory(){
@@ -29,13 +34,13 @@ function newInventory(){
 }
 
 newInventory()
-newImage('assets/green-character.gif', 100, 250)
-newImage('assets/tree.png', 200, 450)
-newImage('assets/pillar.png', 350, 250)
-newImage('assets/pine-tree.png', 450, 350)
-newImage('assets/crate.png', 150, 350)
-newImage('assets/well.png', 500, 575)
+newImage('assets/green-character.gif', 100, 100)
+newImage('assets/tree.png', 200, 300)
+newImage('assets/pillar.png', 350, 100)
+newImage('assets/pine-tree.png', 450, 200)
+newImage('assets/crate.png', 150, 200)
+newImage('assets/well.png', 500, 425)
 
-newItem('assets/sword.png', 500, 555)
-newItem('assets/shield.png', 165, 335)
-newItem('assets/staff.png', 600, 250)
+newItem('assets/sword.png', 500, 405)
+newItem('assets/shield.png', 165, 185)
+newItem('assets/staff.png', 600, 100)
